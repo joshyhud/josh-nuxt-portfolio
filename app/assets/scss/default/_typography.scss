@@ -18,8 +18,19 @@ h4 {
 a {
   color: $font-color;
   text-decoration: none;
+}
 
-  &:hover {
-    opacity: 0.5;
-  }
+p {
+  margin-bottom: $spacing-unit;
+}
+
+strong {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+accent {
+  font-size: 1.75rem;
+  color: $primary-color;
+  font-style: italic;
 }

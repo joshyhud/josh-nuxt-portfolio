@@ -1,2 +1,33 @@
 .app-footer {
+  position: fixed;
+  background: $neutral-color;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  .chat {
+    display: flex;
+    align-items: center;
+    color: $font-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+      transition: color 0.3s ease;
+    }
+
+    .size-5 {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+  }
 }
