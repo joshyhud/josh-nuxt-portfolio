@@ -18,7 +18,7 @@
     "technologies": ["PHP", "WordPress", "SCSS", "Three.js"],
     "liveUrl": "https://frontlineaids.org/",
     "featured": true,
-    "createdAt": "2024-11-22",
+    "createdAt": "2022-11-22",
     "category": "Web development"
   },
   {
@@ -34,16 +34,10 @@
   },
   {
     "id": 4,
-    "title": "Josh Hudson Portfolio Website",
+    "title": "Josh Hudson portfolio",
     "description": "An updated personal portfolio website showcasing my skills, projects, and blog posts. Built with modern web technologies for a responsive and engaging user experience.",
     "image": "/images/projects/portfolio.jpg",
-    "technologies": [
-      "nuxt.js",
-      "vue.js",
-      "Framer Motion",
-      "TypeScript",
-      "SCSS"
-    ],
+    "technologies": ["nuxt.js", "vue.js", "TypeScript", "SCSS"],
     "githubUrl": "https://github.com/yourusername/portfolio",
     "liveUrl": "https://josh-hudson.co.uk",
     "featured": false,
@@ -52,26 +46,150 @@
   },
   {
     "id": 5,
-    "title": "Blog CMS",
-    "description": "A headless content management system for blogs with markdown support, SEO optimization, and multi-author capabilities.",
-    "image": "/images/projects/blog-cms.jpg",
-    "technologies": ["Nuxt.js", "Strapi", "PostgreSQL", "GraphQL"],
-    "githubUrl": "https://github.com/yourusername/blog-cms",
-    "liveUrl": "https://blog-cms-demo.com",
+    "title": "Travelbound",
+    "description": "A brochure website for a travel agency providing trips for schools and educational groups. Features include trip planning tools, destination guides, and booking information.",
+    "image": "/img/travelbound.png",
+    "technologies": ["WordPress", "PHP", "jQuery", "SCSS"],
+    "liveUrl": "https://www.travelbound.co.uk/",
     "featured": false,
-    "createdAt": "2024-08-03",
-    "category": "CMS"
+    "createdAt": "2019-02-20",
+    "category": "Web development"
   },
   {
     "id": 6,
-    "title": "Fitness Tracker",
-    "description": "A mobile-first fitness tracking application with workout logging, progress visualization, and social sharing features.",
-    "image": "/images/projects/fitness-tracker.jpg",
-    "technologies": ["React Native", "Express.js", "MongoDB", "JWT"],
-    "githubUrl": "https://github.com/yourusername/fitness-tracker",
-    "liveUrl": "https://fitness-tracker-demo.com",
+    "title": "WCV (World Class Vacations)",
+    "description": "A website for World Class Vacations, offering specialized trips to schools and organizations for dance, cooking, and entertainment experiences at Disney in the USA. Features a custom-built trip booking platform developed with TypeScript to efficiently manage bookings.",
+    "image": "/img/wcv.png",
+    "technologies": ["WordPress", "TypeScript", "Custom Booking Platform"],
+    "liveUrl": "https://wcv.com/",
     "featured": false,
-    "createdAt": "2024-07-12",
-    "category": "Mobile App"
+    "createdAt": "2022-03-31",
+    "category": "Web development & booking"
+  },
+  {
+    "id": 7,
+    "title": "Sea on Glass",
+    "description": "A small West Coast artist creating unique pieces of art from washed up sea glass. Multi-media artworks. Created an online platform for e-commerce.",
+    "image": "/img/seaonglass.png",
+    "technologies": ["WordPress", "PHP", "JavaScript", "SCSS"],
+    "liveUrl": "https://sea-on-glass.co.uk/",
+    "featured": false,
+    "createdAt": "2023-05-20",
+    "category": "E-commerce & Web development"
+  },
+  {
+    "id": 8,
+    "title": "Wrong Side of the Road",
+    "description": "An interactive e-learning platform focused on drink driving awareness. Utilizes WordPress and online video to create immersive, narrative-driven learning experiences for users.",
+    "image": "/img/wrongsideoftheroad.png",
+    "technologies": [
+      "WordPress",
+      "Online Video",
+      "E-Learning",
+      "Interactive Narratives"
+    ],
+    "liveUrl": "https://wrongsideoftheroad.com/",
+    "featured": true,
+    "createdAt": "2021-09-15",
+    "category": "E-learning & Awareness"
+  },
+  {
+    "id": 9,
+    "title": "Brighton i360 (British Airways)",
+    "description": "Developed a website for the iconic Brighton i360 attraction, operated by British Airways. The site features ticket booking, event information, and interactive visitor guides.",
+    "image": "/img/brightoni360.png",
+    "technologies": ["WordPress", "PHP", "Booking System", "JavaScript"],
+    "liveUrl": "https://britishairwaysi360.com/",
+    "featured": false,
+    "createdAt": "2018-06-10",
+    "category": "Web development & Booking"
+  },
+  {
+    "id": 10,
+    "title": "Principle Accounting",
+    "description": "A professional website for Principle Accounting, providing information on services, resources, and client support. Designed for clarity and ease of use.",
+    "image": "/img/principleaccounting.png",
+    "technologies": ["WordPress", "PHP", "SCSS"],
+    "liveUrl": "https://principleaccounting.co.uk/",
+    "featured": false,
+    "createdAt": "2020-04-18",
+    "category": "Web development"
+  },
+  {
+    "id": 11,
+    "title": "LJWG (London Joint Working Group)",
+    "description": "Website for the London Joint Working Group on Substance Use and Hepatitis C, providing resources, research, and advocacy information.",
+    "image": "/img/ljwg.png",
+    "technologies": ["WordPress", "PHP", "SCSS"],
+    "liveUrl": "https://ljwg.org.uk/",
+    "featured": false,
+    "createdAt": "2019-11-05",
+    "category": "Web development & Advocacy"
+  },
+  {
+    "id": 12,
+    "title": "Roffey Park",
+    "description": "A modern website for Roffey Park Institute, an international leadership and management training organization. Features course listings, booking, and resource libraries.",
+    "image": "/img/roffeypark.png",
+    "technologies": ["WordPress", "PHP", "Booking System", "SCSS"],
+    "liveUrl": "https://www.roffeypark.ac.uk/",
+    "featured": false,
+    "createdAt": "2021-02-12",
+    "category": "Web development & Training"
+  },
+  {
+    "id": 13,
+    "title": "Vodafone – Design is the Difference",
+    "description": "Collaborated with Tilt to deliver an interactive web experience for Vodafone, highlighting the impact of design in business. The project features engaging animations and storytelling elements.",
+    "image": "/img/vodafone-design-difference.png",
+    "technologies": ["WordPress", "JavaScript", "GSAP", "SCSS"],
+    "liveUrl": "https://wearetilt.com/design-is-the-difference/",
+    "featured": true,
+    "createdAt": "2024-03-15",
+    "category": "Web development & Interactive"
+  },
+  {
+    "id": 14,
+    "title": "V4 Wood Flooring",
+    "description": "Developed a modern website for V4 Wood Flooring, showcasing their product range, inspiration galleries, and dealer locator. Focused on performance and user experience.",
+    "image": "/img/v4woodflooring.png",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
+    "liveUrl": "https://www.v4woodflooring.co.uk/",
+    "featured": false,
+    "createdAt": "2024-05-10",
+    "category": "E-commerce & Web development"
+  },
+  {
+    "id": 15,
+    "title": "The Groovy Food Company",
+    "description": "Built a fresh, vibrant website for The Groovy Food Company to promote their range of natural food products. Includes recipes, product information, and stockist finder.",
+    "image": "/img/groovyfood.png",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
+    "liveUrl": "https://www.groovyfood.co.uk/",
+    "featured": false,
+    "createdAt": "2024-04-18",
+    "category": "E-commerce & Web development"
+  },
+  {
+    "id": 16,
+    "title": "CamperKing",
+    "description": "Created a new website for CamperKing, a leading campervan conversion company. Features vehicle listings, booking forms, and a dealer network map.",
+    "image": "/img/camperking.png",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
+    "liveUrl": "https://www.camperking.co.uk/",
+    "featured": false,
+    "createdAt": "2024-02-28",
+    "category": "E-commerce & Web development"
+  },
+  {
+    "id": 17,
+    "title": "Bamboo Nine – New Branded Website",
+    "description": "Developed a new branded website for Bamboo Nine, a digital marketing agency. The site features case studies, service pages, and a bold, modern design.",
+    "image": "/img/bamboonine.png",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
+    "liveUrl": "https://www.bamboonine.co.uk/",
+    "featured": false,
+    "createdAt": "2024-06-01",
+    "category": "Web development & Branding"
   }
 ]
