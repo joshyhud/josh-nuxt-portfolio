@@ -1,49 +1,53 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Platform",
-    "description": "A full-stack e-commerce solution built with Vue.js and Node.js, featuring user authentication, payment processing, and inventory management.",
-    "image": "/images/projects/ecommerce.jpg",
-    "technologies": ["Vue.js", "Node.js", "MongoDB", "Stripe"],
-    "liveUrl": "https://demo-ecommerce.com",
+    "title": "Smashed Online",
+    "description": "A global online educational platform for schools and students to learn about underage drinking, featuring interactive lessons, quizzes, and resources for parents and educators.",
+    "image": "/img/smashedonline.png",
+    "technologies": ["PHP", "WordPress", "E-Learning", "Data & reporting"],
+    "liveUrl": "https://online.smashedproject.org/",
     "featured": true,
-    "createdAt": "2024-12-15",
-    "category": "Web Development"
+    "createdAt": "2023-03-21",
+    "category": "Web development & data visualization"
   },
   {
     "id": 2,
-    "title": "Task Management App",
-    "description": "A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking.",
-    "image": "/images/projects/task-manager.jpg",
-    "technologies": ["React", "Firebase", "Tailwind CSS", "Socket.io"],
-    "githubUrl": "https://github.com/yourusername/task-manager",
-    "liveUrl": "https://task-manager-demo.com",
+    "title": "Frontline Aids",
+    "description": "A UK Based charity dedicated to ending HIV/AIDS through advocacy and community. Work involved rebranding and developing a new website with interactive features and elements to display key content.",
+    "image": "/img/frontlineaids.png",
+    "technologies": ["PHP", "WordPress", "SCSS", "Three.js"],
+    "liveUrl": "https://frontlineaids.org/",
     "featured": true,
     "createdAt": "2024-11-22",
-    "category": "Web Application"
+    "category": "Web development"
   },
   {
     "id": 3,
-    "title": "Weather Dashboard",
-    "description": "A responsive weather dashboard that provides detailed weather information, forecasts, and interactive maps using real-time weather APIs.",
-    "image": "/images/projects/weather-dashboard.jpg",
-    "technologies": ["Nuxt.js", "OpenWeather API", "Chart.js", "SCSS"],
-    "githubUrl": "https://github.com/yourusername/weather-dashboard",
-    "liveUrl": "https://weather-dashboard-demo.com",
-    "featured": false,
-    "createdAt": "2024-10-08",
-    "category": "Data Visualization"
+    "title": "Tilt",
+    "description": "A creative digital agency specializing in film/motion, web design and development, and branding. My role involved creating a new website with a focus on showcasing their portfolio and services.",
+    "image": "/img/wearetilt.png",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
+    "liveUrl": "https://wearetilt.com",
+    "featured": true,
+    "createdAt": "2020-12-08",
+    "category": "Web development"
   },
   {
     "id": 4,
-    "title": "Portfolio Website",
-    "description": "A modern, responsive portfolio website showcasing design skills and development projects with smooth animations and dark mode support.",
+    "title": "Josh Hudson Portfolio Website",
+    "description": "An updated personal portfolio website showcasing my skills, projects, and blog posts. Built with modern web technologies for a responsive and engaging user experience.",
     "image": "/images/projects/portfolio.jpg",
-    "technologies": ["Next.js", "Framer Motion", "TypeScript", "Vercel"],
+    "technologies": [
+      "nuxt.js",
+      "vue.js",
+      "Framer Motion",
+      "TypeScript",
+      "SCSS"
+    ],
     "githubUrl": "https://github.com/yourusername/portfolio",
-    "liveUrl": "https://your-portfolio.com",
-    "featured": true,
-    "createdAt": "2024-09-14",
+    "liveUrl": "https://josh-hudson.co.uk",
+    "featured": false,
+    "createdAt": "2025-08-01",
     "category": "Portfolio"
   },
   {
@@ -54,7 +58,7 @@
     "technologies": ["Nuxt.js", "Strapi", "PostgreSQL", "GraphQL"],
     "githubUrl": "https://github.com/yourusername/blog-cms",
     "liveUrl": "https://blog-cms-demo.com",
-    "featured": true,
+    "featured": false,
     "createdAt": "2024-08-03",
     "category": "CMS"
   },

@@ -1,6 +1,6 @@
 <template>
   <footer class="app-footer">
-    <a href="mailto:joshhudsondev@gmail.com" class="chat">
+    <a href="mailto:joshhudsondev@gmail.com" class="chat btn">
       Let's chat <UIcon name="i-tabler-mail" class="size-5" />
     </a>
     <div class="nav-links">

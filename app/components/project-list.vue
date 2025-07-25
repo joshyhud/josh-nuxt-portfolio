@@ -18,7 +18,7 @@
       </div>
 
       <div class="section-footer">
-        <a to="/work" class="btn secondary"> View All Projects </a>
+        <a href="/work" class="btn secondary"> View All Projects </a>
       </div>
     </div>
   </section>

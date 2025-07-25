@@ -1,6 +1,6 @@
 <template>
   <header class="app-header">
-    <a href="/" class="logo">Josh Hudson</a>
+    <a href="/" class="btn logo">Josh Hudson</a>
 
     <div class="nav-links">
       <a class="btn primary" href="/about">About</a>

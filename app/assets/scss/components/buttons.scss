@@ -9,18 +9,9 @@
   text-decoration: none;
   transition: color 0.3s ease;
 
-  &.primary {
-    &:hover {
-      color: $primary-color;
-      transition: color 0.3s ease;
-    }
-  }
-
-  &.secondary {
-    &:hover {
-      color: $accent-color;
-      transition: color 0.3s ease;
-    }
+  &:hover {
+    color: $accent-color;
+    transition: color 0.3s ease;
   }
 
   &.social {
