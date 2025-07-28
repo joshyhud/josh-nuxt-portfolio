@@ -11,7 +11,7 @@
 
       <!-- Filter Dropdown -->
       <div class="filter">
-        <label for="tech-filter">Filter by Technology:</label>
+        <label for="tech-filter">Filter:</label>
         <select id="tech-filter" v-model="selectedTech">
           <option value="">All</option>
           <option v-for="tech in allTechnologies" :key="tech" :value="tech">
@@ -29,27 +29,38 @@
       </div>
 
       <div class="pagination" v-if="totalPages > 1">
-        <button :disabled="currentPage === 1" @click="currentPage--">
-          Prev
+        <button
+          :disabled="currentPage === 1"
+          @click="currentPage--"
+          aria-label="Previous Page"
+        >
+          &lt;
         </button>
-        <span>Page {{ currentPage }} of {{ totalPages }}</span>
-        <button :disabled="currentPage === totalPages" @click="currentPage++">
-          Next
+        <button
+          v-for="page in totalPages"
+          :key="page"
+          :class="{ active: page === currentPage }"
+          @click="currentPage = page"
+        >
+          {{ page }}
         </button>
-      </div>
-
-      <div class="section-footer">
-        <a to="/work" class="btn secondary"> View All Projects </a>
+        <button
+          :disabled="currentPage === totalPages"
+          @click="currentPage++"
+          aria-label="Next Page"
+        >
+          &gt;
+        </button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import projectsData from "~/data/projects.json";
 
-const pageSize = 6;
+const pageSize = 9;
 const currentPage = ref(1);
 const selectedTech = ref("");
 

@@ -10,11 +10,9 @@
       </div>
 
       <div class="projects-grid">
-        <ProjectCard
-          v-for="project in recentProjects"
-          :key="project.id"
-          :project="project"
-        />
+        <div v-for="(project, index) in recentProjects" :key="project.id">
+          <ProjectCard :project="project" />
+        </div>
       </div>
 
       <div class="section-footer">

@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  // Added styles
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
+
+  // Added button styles
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: $neutral-color;
+    cursor: pointer;
+    border-radius: 200px;
+    transition: all 0.5s ease-in-out;
+
+    &.active {
+      background: $accent-color;
+      color: $neutral-color;
+      font-weight: bold;
+    }
+
+    &:hover:not(.active) {
+      background: darken($accent-color, 10%);
+      color: $neutral-color;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

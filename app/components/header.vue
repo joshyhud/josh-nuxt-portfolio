@@ -1,10 +1,12 @@
 <template>
   <header class="app-header">
-    <a href="/" class="btn logo">Josh Hudson</a>
+    <div>
+      <NuxtLink to="/" class="btn logo">Josh Hudson</NuxtLink>
+    </div>
 
     <div class="nav-links">
-      <a class="btn primary" href="/about">About</a>
-      <a class="btn secondary" href="/work">work</a>
+      <NuxtLink class="btn primary" to="/about">About</NuxtLink>
+      <NuxtLink class="btn secondary" to="/work">Work</NuxtLink>
     </div>
   </header>
 </template>

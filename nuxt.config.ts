@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: "app/",
   css: ["~/assets/scss/main.scss"],
   components: true, // 👈 auto-import components
   compatibilityDate: "2025-07-15",
@@ -7,18 +8,18 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Nuxt", // default fallback title
-      charset: "utf-16",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      title: "Josh Hudson Dev", // default fallback title
       htmlAttrs: {
-        lang: "en",
+        lang: "en-GB",
       },
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      charset: "utf-16",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     },
   },
 
   modules: [
-    "@nuxt/content",
+    // "@nuxt/content", // Temporarily disabled due to Node.js version compatibility
     "@nuxt/eslint",
     "@nuxt/image",
     "@nuxt/test-utils",
