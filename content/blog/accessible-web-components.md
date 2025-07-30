@@ -5,7 +5,7 @@ date: "2024-07-10"
 author: "Josh Hudson"
 tags: ["accessibility", "a11y", "web-components", "inclusive-design"]
 featured: true
-image: "/img/blog/accessibility.jpg"
+image: "./img/blog/accessibility.jpg"
 ---
 
 # Building Accessible Web Components
