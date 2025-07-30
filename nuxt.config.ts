@@ -16,6 +16,8 @@ export default defineNuxtConfig({
       charset: "utf-16",
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     },
+    // GitHub Pages configuration
+    baseURL: process.env.NODE_ENV === "production" ? "/josh-nuxt/" : "/",
   },
 
   modules: [
@@ -25,5 +27,13 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "@nuxt/ui",
     "@nuxt/scripts",
+    "@vueuse/motion/nuxt",
   ],
+
+  // GitHub Pages static generation
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 });
