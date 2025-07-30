@@ -1,3 +1,7 @@
+<style lang="postcss">
+@import "~/assets/scss/main.scss";
+</style>
+
 <template>
   <div>
     <NuxtLayout>
