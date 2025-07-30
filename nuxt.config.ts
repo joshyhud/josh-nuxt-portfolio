@@ -30,7 +30,6 @@ export default defineNuxtConfig({
     //"@nuxt/content", // Temporarily disabled due to Node.js version compatibility
     "@nuxt/image", // Used for <NuxtImg> components in cards
     "@vueuse/motion/nuxt", // Essential for site animations
-    "@nuxtjs/sitemap",
   ],
 
   // GitHub Pages static generation
