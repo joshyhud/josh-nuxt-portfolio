@@ -1,9 +1,9 @@
 # https://github.com/actions/deploy-pages#usage
 name: Deploy to GitHub Pages
 on:
-  pull_request:
-    branches: [main]
-    types: [closed]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
