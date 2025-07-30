@@ -6,6 +6,14 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  routeRules: {
+    "/": {
+      headers: {
+        "Cache-Control": "max-age=600 Public",
+      },
+    },
+  },
+
   app: {
     head: {
       title: "Josh Hudson Dev", // default fallback title
