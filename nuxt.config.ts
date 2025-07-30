@@ -14,6 +14,11 @@ export default defineNuxtConfig({
     },
   },
 
+  site: {
+    url: "https://josh-hudson.co.uk",
+    name: "Josh Hudson Dev",
+  },
+
   app: {
     head: {
       title: "Josh Hudson Dev", // default fallback title
@@ -30,6 +35,7 @@ export default defineNuxtConfig({
     //"@nuxt/content", // Temporarily disabled due to Node.js version compatibility
     "@nuxt/image", // Used for <NuxtImg> components in cards
     "@vueuse/motion/nuxt", // Essential for site animations
+    "@nuxtjs/sitemap",
   ],
 
   // GitHub Pages static generation
