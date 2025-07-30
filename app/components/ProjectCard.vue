@@ -1,7 +1,7 @@
 <template>
   <div class="project-card">
     <div class="project-image">
-      <NuxtImg :src="project.image" :alt="project.title" />
+      <NuxtImg loading="lazy" :src="project.image" :alt="project.title" />
       <div class="project-overlay">
         <div class="project-links">
           <a

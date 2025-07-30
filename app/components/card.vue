@@ -3,10 +3,10 @@
     <template v-if="link">
       <a :href="link" class="card-link">
         <div v-if="cardClass" :class="['card-image', cardClass]">
-          <NuxtImg v-if="image" :src="image" alt="Card image" />
+          <NuxtImg loading="lazy" v-if="image" :src="image" alt="Card image" />
         </div>
         <div v-else class="card-image">
-          <NuxtImg v-if="image" :src="image" alt="Card image" />
+          <NuxtImg loading="lazy" v-if="image" :src="image" alt="Card image" />
         </div>
         <div class="card-content">
           <slot>
@@ -19,10 +19,10 @@
     <template v-else>
       <div>
         <div v-if="cardClass" :class="['card-image', cardClass]">
-          <NuxtImg v-if="image" :src="image" alt="Card image" />
+          <NuxtImg loading="lazy" v-if="image" :src="image" alt="Card image" />
         </div>
         <div v-else class="card-image">
-          <NuxtImg v-if="image" :src="image" alt="Card image" />
+          <NuxtImg loading="lazy" v-if="image" :src="image" alt="Card image" />
         </div>
         <div class="card-content">
           <slot>
