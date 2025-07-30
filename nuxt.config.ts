@@ -27,13 +27,9 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    // "@nuxt/content", // Temporarily disabled due to Node.js version compatibility
-    "@nuxt/eslint",
-    "@nuxt/image",
-    "@nuxt/test-utils",
-    "@nuxt/ui",
-    "@nuxt/scripts",
-    "@vueuse/motion/nuxt",
+    //"@nuxt/content", // Temporarily disabled due to Node.js version compatibility
+    "@nuxt/image", // Used for <NuxtImg> components in cards
+    "@vueuse/motion/nuxt", // Essential for site animations
   ],
 
   // GitHub Pages static generation
