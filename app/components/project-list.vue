@@ -16,7 +16,9 @@
       </div>
 
       <div class="section-footer">
-        <a href="/work" class="btn secondary"> View All Projects </a>
+        <NuxtLink to="/work" class="btn secondary">
+          View All Projects
+        </NuxtLink>
       </div>
     </div>
   </section>
