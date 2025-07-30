@@ -16,7 +16,7 @@ useSeoMeta({
 <template>
   <section class="hero">
     <div class="container grid">
-      <Card cardClass="sm" image="./img/profile.png" />
+      <Card fetchpriority="high" cardClass="sm" image="./img/profile.png" />
       <div class="statement">
         <p>
           <accent>Hi, I'm Josh.</accent> I focus on impactful digital
