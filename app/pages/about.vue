@@ -8,7 +8,7 @@ useSeoMeta({
     "Get to know Josh Hudson, a UK-based full-stack developer with a passion for clean code, CSS animations, and creative digital experiences. From freelancing to leading projects, discover his journey, skills, and values.",
   ogDescription:
     "Get to know Josh Hudson, a UK-based full-stack developer with a passion for clean code, CSS animations, and creative digital experiences. From freelancing to leading projects, discover his journey, skills, and values.",
-  ogImage: "https://example.com/image.png",
+  ogImage: "https://example.com/image.webp",
   twitterCard: "summary_large_image",
 });
 

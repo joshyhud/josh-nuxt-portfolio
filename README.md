@@ -1,6 +1,6 @@
 # Josh Hudson Portfolio
 
-![Portfolio Screenshot](./public/img/portfolio-page.png)
+![Portfolio Screenshot](./public/img/portfolio-page.webp)
 
 A modern, responsive portfolio website built with Nuxt.js 4 showcasing web development projects and skills. This site features smooth animations, an engaging loading screen, and seamless page transitions to create an exceptional user experience. Perfect for developers looking to showcase their work with style.
 
@@ -171,7 +171,7 @@ Edit `data/projects.json` to add new projects with featured status:
   "id": 7,
   "title": "Your Animated Project",
   "description": "Project description with engaging copy...",
-  "image": "/img/your-project.png",
+  "image": "/img/your-project.webp",
   "technologies": ["Nuxt.js", "Vue Motion", "TypeScript"],
   "liveUrl": "https://your-project.com",
   "githubUrl": "https://github.com/username/repo",
@@ -217,7 +217,7 @@ The site uses `@vueuse/motion` for animations. Key features:
 
 ### Adding Images
 
-Place project images in `public/img/` directory and reference them in your JSON file as `/img/filename.png`
+Place project images in `public/img/` directory and reference them in your JSON file as `/img/filename.webp`
 
 ## 📋 Available Scripts
 
