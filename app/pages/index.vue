@@ -8,7 +8,7 @@ useSeoMeta({
     "Experienced developer delivering custom WordPress, Shopify and bespoke web solutions. Passionate about CSS animations, generative art, server management & modern frameworks like React/Next.js. Check out my portfolio and blog.",
   ogDescription:
     "Experienced developer delivering custom WordPress, Shopify and bespoke web solutions. Passionate about CSS animations, generative art, server management & modern frameworks like React/Next.js. Check out my portfolio and blog.",
-  ogImage: "https://example.com/image.png",
+  ogImage: "https://example.com/image.webp",
   twitterCard: "summary_large_image",
 });
 </script>
@@ -16,7 +16,7 @@ useSeoMeta({
 <template>
   <section class="hero">
     <div class="container grid">
-      <Card fetchpriority="high" cardClass="sm" image="./img/profile.png" />
+      <Card fetchpriority="high" cardClass="sm" image="./img/profile.webp" />
       <div class="statement">
         <p>
           <accent>Hi, I'm Josh.</accent> I focus on impactful digital

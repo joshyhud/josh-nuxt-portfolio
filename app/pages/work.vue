@@ -8,7 +8,7 @@ useSeoMeta({
     "Explore a selection of Josh Hudson’s recent web development projects—ranging from custom WordPress themes to dynamic Shopify storefronts and fully bespoke builds. Designed with performance, accessibility, and creativity in mind.",
   ogDescription:
     "Explore a selection of Josh Hudson’s recent web development projects—ranging from custom WordPress themes to dynamic Shopify storefronts and fully bespoke builds. Designed with performance, accessibility, and creativity in mind.",
-  ogImage: "https://example.com/image.png",
+  ogImage: "https://example.com/image.webp",
   twitterCard: "summary_large_image",
 });
 </script>
