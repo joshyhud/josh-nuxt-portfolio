@@ -5,20 +5,30 @@
     </a>
     <div class="nav-links">
       <a
+        alt="GitHub profile Link"
         class="btn social"
         href="https://github.com/joshyhud"
         target="_blank"
         rel="noopener"
       >
-        <UIcon name="i-tabler-brand-github" class="size-5" />
+        <UIcon
+          name="i-tabler-brand-github"
+          class="size-5"
+          alt="GitHub Social icon"
+        />
       </a>
       <a
+        alt="LinkedIn Social Link"
         class="btn social"
         href="https://linkedin.com/in/josh-hudson-972652143"
         target="_blank"
         rel="noopener"
       >
-        <UIcon name="i-tabler-brand-linkedin" class="size-5" />
+        <UIcon
+          name="i-tabler-brand-linkedin"
+          class="size-5"
+          alt="LinkedIn Social icon"
+        />
       </a>
     </div>
   </footer>

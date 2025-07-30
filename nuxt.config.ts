@@ -27,7 +27,7 @@ export default defineNuxtConfig({
       },
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       charset: "utf-16",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=2",
     },
   },
 
@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     //"@nuxt/content", // Temporarily disabled due to Node.js version compatibility
     "@nuxt/image", // Used for <NuxtImg> components in cards
     "@vueuse/motion/nuxt", // Essential for site animations
+    "@nuxt/ui",
     "@nuxtjs/sitemap",
   ],
 
