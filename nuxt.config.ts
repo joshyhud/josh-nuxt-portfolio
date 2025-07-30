@@ -16,9 +16,6 @@ export default defineNuxtConfig({
       charset: "utf-16",
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     },
-    // GitHub Pages configuration
-    baseURL:
-      process.env.NODE_ENV === "production" ? "/josh-nuxt-portfolio/" : "/",
   },
 
   modules: [
