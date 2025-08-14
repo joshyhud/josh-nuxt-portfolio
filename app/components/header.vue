@@ -5,9 +5,9 @@
     </div>
 
     <div class="nav-links">
-      <NuxtLink class="btn primary" to="/blog">Blog</NuxtLink>
-      <NuxtLink class="btn primary" to="/about">About</NuxtLink>
       <NuxtLink class="btn secondary" to="/work">Work</NuxtLink>
+      <NuxtLink class="btn primary" to="/about">About</NuxtLink>
+      <NuxtLink class="btn primary" to="/blog">Blog</NuxtLink>
     </div>
   </header>
 </template>
