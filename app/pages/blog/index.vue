@@ -94,17 +94,22 @@ onBeforeUnmount(() => {
       <div class="container">
         <h1>Blog</h1>
         <div class="blog-cards">
-          <div v-for="post in posts" :key="post.id" class="blog-card">
-            <NuxtLink :to="post.path">
-              <div class="blog-card-image"></div>
+          <div v-if="posts && posts.length > 0">
+            <div v-for="post in posts" :key="post.id" class="blog-card">
+              <NuxtLink :to="post.path">
+                <div class="blog-card-image"></div>
 
-              <div class="blog-card-content">
-                <h3 class="blog-card-title">{{ post.title }}</h3>
-                <p class="blog-card-date">
-                  {{ new Date(post.date).toLocaleDateString() }}
-                </p>
-              </div>
-            </NuxtLink>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">{{ post.title }}</h3>
+                  <p class="blog-card-date">
+                    {{ new Date(post.date).toLocaleDateString() }}
+                  </p>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+          <div v-else>
+            <p>Posts coming soon!</p>
           </div>
         </div>
       </div>
