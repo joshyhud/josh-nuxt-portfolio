@@ -5,12 +5,7 @@ date: "2024-07-10"
 author: "Josh Hudson"
 tags: ["accessibility", "a11y", "web-components", "inclusive-design"]
 featured: true
-image: "./img/blog/accessibility.jpg"
 ---
-
-# Building Accessible Web Components
-
-Accessibility should be a fundamental consideration in every web development project. Here's how to build components that work for everyone.
 
 ## The Importance of Semantic HTML
 

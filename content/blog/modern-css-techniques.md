@@ -5,7 +5,6 @@ date: "2024-07-15"
 author: "Josh Hudson"
 tags: ["css", "frontend", "design", "ux"]
 featured: false
-image: "./img/blog/modern-css.jpg"
 ---
 
 # Modern CSS Techniques for Better UX

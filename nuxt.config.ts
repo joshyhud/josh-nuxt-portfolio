@@ -5,10 +5,22 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  routeRules: {
-    "/": {
-      headers: {
-        "Cache-Control": "max-age=600 Public",
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3, // include h3 headings
+        },
+        remarkPlugins: {
+          // Override remark-emoji options
+          "remark-emoji": {
+            options: {
+              emoticon: true,
+            },
+          },
+          // Disable remark-gfm
+          "remark-gfm": false,
+        },
       },
     },
   },
@@ -36,6 +48,7 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt", // Essential for site animations
     "@nuxt/ui",
     "@nuxtjs/sitemap",
+    "@nuxt/content",
   ],
 
   // GitHub Pages static generation

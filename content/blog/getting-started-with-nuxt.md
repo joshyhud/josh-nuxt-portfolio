@@ -5,7 +5,6 @@ date: "2024-07-20"
 author: "Josh Hudson"
 tags: ["nuxt", "vue", "javascript", "web-development"]
 featured: true
-image: "./img/blog/nuxt-getting-started.jpg"
 ---
 
 # Getting Started with Nuxt.js 3

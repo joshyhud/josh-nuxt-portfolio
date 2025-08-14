@@ -13,5 +13,9 @@
   .nav-links {
     display: flex;
     gap: 1rem;
+
+    a {
+      padding: 0.25rem 1rem;
+    }
   }
 }
