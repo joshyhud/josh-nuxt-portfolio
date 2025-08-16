@@ -26,16 +26,6 @@ const { data: post } = await useAsyncData(route.path, () => {
             <p class="mt-4 text-lg">{{ post.description }}</p>
           </div>
         </div>
-        <!-- Featured image -->
-
-        <div class="blog-header-image">
-          <NuxtImg
-            v-if="post.image"
-            :src="post.image"
-            :alt="post.title"
-            class="rounded-xl mb-6"
-          />
-        </div>
       </div>
     </section>
 

@@ -49,7 +49,12 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/sitemap",
     "@nuxt/content",
+    "nuxt-gtag",
   ],
+
+  gtag: {
+    id: "G-70N2N7VQKD", // replace with your GA measurement ID
+  },
 
   // GitHub Pages static generation
   nitro: {
