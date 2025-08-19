@@ -5,6 +5,17 @@
     </a>
     <div class="nav-links">
       <a
+        alt="Buy me a coffee Link"
+        class="btn"
+        href="https://www.buymeacoffee.com/joshyhud"
+      >
+        <UIcon
+          name="i-tabler-coffee"
+          class="size-5"
+          alt="Buy me a coffee icon"
+        />
+      </a>
+      <a
         alt="GitHub profile Link"
         class="btn social"
         href="https://github.com/joshyhud"
