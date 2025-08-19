@@ -8,6 +8,7 @@
         alt="Buy me a coffee Link"
         class="btn"
         href="https://www.buymeacoffee.com/joshyhud"
+        title="Buy me a coffee"
       >
         <UIcon
           name="i-tabler-coffee"
@@ -21,6 +22,7 @@
         href="https://github.com/joshyhud"
         target="_blank"
         rel="noopener"
+        title="GitHub profile"
       >
         <UIcon
           name="i-tabler-brand-github"
@@ -34,6 +36,7 @@
         href="https://linkedin.com/in/josh-hudson-972652143"
         target="_blank"
         rel="noopener"
+        title="LinkedIn profile"
       >
         <UIcon
           name="i-tabler-brand-linkedin"
