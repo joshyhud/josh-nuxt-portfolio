@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import MainLayout from './MainLayout.astro';
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	relatedPosts?: CollectionEntry<'blog'>[];
+};
+
+const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+	<article>
+		<div class="post-header">
+			<div class="container grid">
+				{heroImage && (
+					<div class="blog-header-image">
+						<Image width={1020} height={510} src={heroImage} alt="" />
+					</div>
+				)}
+				<div class="blog-header-content">
+					<div>
+						<div class="date">
+							<FormattedDate date={pubDate} />
+							{updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)}
+													{Astro.props.tags && (
+							<div class="tags">
+								{Astro.props.tags.map((tag: string) => (
+									<span class="blog-tag">{tag}</span>
+								))}
+							</div>
+						)}
+						</div>
+
+						<h1>{title}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prose container">
+			<slot />
+		</div>
+	</article>
+	{relatedPosts && relatedPosts.length > 0 && (
+		<section class="related-posts container">
+			<h2>Related Posts</h2>
+			<div class="posts-grid">
+				{relatedPosts.slice(0, 3).map((post: CollectionEntry<'blog'>) => (
+					<a href={`/blog/${post.slug}`} class="post-card">
+						<h3>{post.data.title}</h3>
+						<p>{post.data.description}</p>
+						<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+</MainLayout>

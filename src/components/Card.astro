@@ -1,0 +1,31 @@
+---
+interface Props {
+  link?: string;
+  image?: string;
+  cardClass?: string;
+  title?: string;
+  text?: string;
+  fetchpriority?: string;
+}
+
+const { link, image, cardClass, title, text, fetchpriority } = Astro.props;
+
+const imageClasses = ["card-image", cardClass].filter(Boolean).join(" ");
+const Tag = link ? "a" : "div";
+---
+
+<div class="card">
+  <Tag href={link} class={link ? "card-link" : undefined}>
+    {image && (
+      <div class={imageClasses}>
+        <img loading={fetchpriority === "high" ? "eager" : "lazy"} src={image} alt="Card image" />
+      </div>
+    )}
+    <div class="card-content">
+      <slot>
+        {title && <h3>{title}</h3>}
+        {text && <p>{text}</p>}
+      </slot>
+    </div>
+  </Tag>
+</div>

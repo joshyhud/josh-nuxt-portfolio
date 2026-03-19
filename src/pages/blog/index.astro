@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const allTags = [
+	...new Set(
+		posts.flatMap((post) => post.data.tags ?? []).map((tag) => tag.trim())
+	),
+].sort((a, b) => a.localeCompare(b));
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="blog-grid">
+		<div class="container">
+			<div class="section-header">
+				<h1>Blog</h1>
+				<p>Thoughts, tutorials, and notes on web development.</p>
+			</div>
+
+			{allTags.length > 0 && (
+				<div class="tag-filters" aria-label="Filter blog posts by tag">
+					<button class="tag-filter is-active" type="button" data-filter="all">
+						All
+					</button>
+					{allTags.map((tag) => (
+						<button class="tag-filter" type="button" data-filter={tag.toLowerCase()}>
+							{tag.endsWith('s') ? tag : tag + 's'}
+						</button>
+					))}
+				</div>
+			)}
+
+			<div class="blog-cards grid" id="blog-cards">
+				{
+					posts.map((post) => (
+						<div
+							class="blog-card"
+							data-tags={(post.data.tags ?? []).map((t) => t.toLowerCase()).join(',')}
+						>
+							<a href={`/blog/${post.id}/`}>
+								<div class="blog-card-rollover"></div>
+								<div class="blog-card-content">
+									<h4>{post.data.title}</h4>
+									<p class="blog-card-date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+									{post.data.tags && post.data.tags.length > 0 && (
+										<ul class="blog-card-tags">
+											{post.data.tags.map((tag) => (
+												<li class="blog-tag">{tag}</li>
+											))}
+										</ul>
+									)}
+								</div>
+							</a>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter');
+	const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const filter = (button.getAttribute('data-filter') ?? 'all').toLowerCase();
+
+			buttons.forEach((btn) => btn.classList.remove('is-active'));
+			button.classList.add('is-active');
+
+			cards.forEach((card) => {
+				const tags = (card.getAttribute('data-tags') ?? '')
+					.split(',')
+					.map((t) => t.trim())
+					.filter(Boolean);
+
+				const show = filter === 'all' || tags.includes(filter);
+				card.toggleAttribute('hidden', !show);
+			});
+		});
+	});
+</script>

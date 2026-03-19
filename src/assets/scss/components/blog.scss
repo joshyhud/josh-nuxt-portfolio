@@ -1,0 +1,103 @@
+.blog-card-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  gap: 0.5rem;
+
+  .blog-tag {
+    background: #e9ecef;
+    color: #495057;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 200px;
+    font-weight: 500;
+  }
+}
+
+.blog-tag {
+  background: #e9ecef;
+  color: #495057;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 200px;
+  font-weight: 500;
+  cursor: default;
+}
+.blog-grid {
+  .section-header {
+    margin-bottom: 2rem;
+
+    p {
+      max-width: 600px;
+    }
+  }
+
+  .blog-cards {
+    .blog-card {
+      grid-column: span 4;
+
+      a {
+        display: block;
+        position: relative;
+        border-radius: $border-radius;
+        overflow: hidden;
+
+        .blog-card-rollover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: 100%;
+          height: 5px;
+          overflow: hidden;
+          border-radius: $border-radius;
+          background: linear-gradient(to bottom right, $accent-color, #feb47b);
+          transition: height 0.5s ease-in-out;
+        }
+
+        .blog-card-content {
+          position: relative;
+          z-index: 1;
+          padding: 1.5rem;
+
+          h4 {
+            margin-bottom: $spacing-small;
+          }
+
+          .blog-card-date {
+            color: #666;
+            font-size: $font-size-small;
+            font-style: italic;
+            transition: color 0s ease-in-out;
+          }
+        }
+
+        &:hover {
+          .blog-card-rollover {
+            height: 100%;
+            transition: height 0.5s ease-in-out;
+          }
+
+          .blog-card-content h4,
+          .blog-card-date {
+            color: $neutral-color;
+            transition: color 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 980px) {
+  .blog-grid .blog-cards .blog-card {
+    grid-column: span 6;
+  }
+}
+
+@media (width <= 768px) {
+  .blog-grid .blog-cards .blog-card {
+    grid-column: 1 / -1;
+  }
+}

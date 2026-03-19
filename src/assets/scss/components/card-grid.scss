@@ -1,0 +1,20 @@
+.card-grid {
+  .card {
+    grid-column: span 4;
+  }
+}
+
+@media (width <= 980px) {
+  .card-grid {
+    .card {
+      grid-column: span 6;
+    }
+  }
+}
+@media (width <= 768px) {
+  .card-grid {
+    .card {
+      grid-column: span 4;
+    }
+  }
+}

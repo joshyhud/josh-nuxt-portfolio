@@ -1,0 +1,164 @@
+---
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  createdAt: string;
+  featured: boolean;
+  technologies: string[];
+  liveUrl?: string;
+  repoUrl?: string;
+}
+
+import projectsRaw from "../content/data/projects.json";
+const projects = projectsRaw as unknown as Project[];
+
+interface Props {
+  showAll?: boolean;
+  perPage?: number;
+}
+
+const { showAll = false, perPage = 6 } = Astro.props;
+
+const sorted = [...projects].sort(
+  (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+);
+
+const displayProjects = showAll
+  ? sorted
+  : sorted.filter((p) => p.featured).slice(0, 3);
+
+const categories = showAll
+  ? ["All", ...new Set(projects.map((p) => p.category))]
+  : [];
+---
+
+<section class="project-list" data-per-page={showAll ? perPage : 0}>
+  <div class="container">
+    <div class="section-header">
+      <h2>{showAll ? "Projects" : "Featured projects"}</h2>
+      <p>
+        {showAll
+          ? "A selection of my web development projects showcasing various skills and technologies."
+          : "Here are some of my latest projects showcasing various skills and technologies."}
+      </p>
+    </div>
+
+    {showAll && categories.length > 1 && (
+      <div class="filter">
+        <select id="category-filter">
+          {categories.map((cat) => (
+            <option value={cat}>{cat}</option>
+          ))}
+        </select>
+      </div>
+    )}
+
+    <div class="projects-grid">
+      {displayProjects.map((project) => (
+        <div class="project-card" data-category={project.category}>
+          <div class="project-image">
+            <img src={project.image} alt={project.title} loading="lazy" />
+            <div class="project-overlay">
+              <div class="project-links">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    Live Site
+                  </a>
+                )}
+                {project.repoUrl && (
+                  <a href={project.repoUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                    Source
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">{project.title}</h3>
+              {project.featured && <span class="featured-badge">Featured</span>}
+            </div>
+            <p class="project-description">{project.description}</p>
+            <div class="project-meta">
+              <span class="project-category">{project.category}</span>
+              <span class="project-date">{new Date(project.createdAt).toLocaleDateString("en-GB", { year: "numeric", month: "short" })}</span>
+            </div>
+            <div class="project-technologies">
+              {project.technologies.map((tech) => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {showAll && <nav class="pagination" id="pagination"></nav>}
+
+    {!showAll && (
+      <div class="section-footer">
+        <a href="/work" class="btn secondary">View All Projects</a>
+      </div>
+    )}
+  </div>
+</section>
+
+{showAll && (
+  <script>
+    const section = document.querySelector<HTMLElement>(".project-list");
+    const perPage = parseInt(section?.dataset.perPage || "6", 10);
+    const filter = document.getElementById("category-filter") as HTMLSelectElement | null;
+    const grid = section?.querySelector(".projects-grid");
+    const cards = Array.from(grid?.querySelectorAll<HTMLElement>(".project-card") ?? []);
+    const paginationNav = document.getElementById("pagination");
+    let currentPage = 1;
+
+    function getFiltered() {
+      const cat = filter?.value ?? "All";
+      return cat === "All" ? cards : cards.filter((c) => c.dataset.category === cat);
+    }
+
+    function render() {
+      const filtered = getFiltered();
+      const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      // Show/hide cards
+      for (const card of cards) card.style.display = "none";
+      const start = (currentPage - 1) * perPage;
+      for (const card of filtered.slice(start, start + perPage)) card.style.display = "";
+
+      // Build pagination
+      if (paginationNav) {
+        paginationNav.innerHTML = "";
+        if (totalPages > 1) {
+          const prev = document.createElement("button");
+          prev.textContent = "Prev";
+          prev.disabled = currentPage === 1;
+          prev.addEventListener("click", () => { currentPage--; render(); });
+          paginationNav.appendChild(prev);
+
+          for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = String(i);
+            if (i === currentPage) btn.classList.add("active");
+            btn.addEventListener("click", () => { currentPage = i; render(); });
+            paginationNav.appendChild(btn);
+          }
+
+          const next = document.createElement("button");
+          next.textContent = "Next";
+          next.disabled = currentPage === totalPages;
+          next.addEventListener("click", () => { currentPage++; render(); });
+          paginationNav.appendChild(next);
+        }
+      }
+    }
+
+    filter?.addEventListener("change", () => { currentPage = 1; render(); });
+    render();
+  </script>
+)}

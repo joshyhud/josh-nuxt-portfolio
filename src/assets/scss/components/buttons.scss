@@ -1,0 +1,19 @@
+.btn {
+  display: inline-block;
+  padding: 0.25rem 0rem;
+  font-size: 1rem;
+  color: $font-color;
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
+    transition: color 0.3s ease;
+  }
+
+  &.social {
+  }
+}
