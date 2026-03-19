@@ -13,7 +13,10 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 
 <MainLayout title={title} description={description}>
 	<article>
-		<div class="post-header">
+		<div class="prose container">
+			<slot />
+		</div>
+				<div class="post-header">
 			<div class="container grid">
 				{heroImage && (
 					<div class="blog-header-image">
@@ -42,9 +45,6 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="prose container">
-			<slot />
 		</div>
 	</article>
 	{relatedPosts && relatedPosts.length > 0 && (

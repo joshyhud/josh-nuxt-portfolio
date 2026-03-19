@@ -2,7 +2,6 @@
 title: "Hello World (Again)"
 description: "Tutorials, posts, and insights from a web developer focused on performance, simplicity, and modern web tools."
 pubDate: 2025-01-15
-heroImage: "./img/profile.webp"
 tags:
   - Post
 ---
