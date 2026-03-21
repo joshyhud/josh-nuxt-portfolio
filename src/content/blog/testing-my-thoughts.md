@@ -5,4 +5,7 @@ pubDate: 2026-03-21
 draft: false
 tags: ["Thought"]
 ---
+
 I have setup a PWA for me to log thoughts and update these thoughts directly to my GitHub pages website as MD files. This means i can update small form posts on the go!
+
+Next phase will be to allow images to be uploaded via the PWA and posted to an MD thought file
