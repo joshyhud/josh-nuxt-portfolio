@@ -1,7 +1,7 @@
 ---
 title: "Testing my Thoughts"
 description: "A new thought has been created and updated onto my website via a PWA"
-pubDate: 2026-03-21
+pubDate: 2026-03-21T14:00:00Z
 draft: false
 tags: ["Thought"]
 ---
