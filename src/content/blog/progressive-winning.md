@@ -6,4 +6,4 @@ draft: false
 tags: ["Thought"]
 ---
 
-Creating a pwa for post my thoughts into my website blog feels like progressive winning!! 🎉
+Creating a pwa for posting my thoughts into my website feels like progressive winning!! 🎉
