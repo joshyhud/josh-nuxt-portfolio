@@ -191,8 +191,19 @@
     "image": "/img/bamboonine.webp",
     "technologies": ["WordPress", "PHP", "SCSS", "JavaScript"],
     "liveUrl": "https://www.bamboonine.co.uk/",
-    "featured": true,
+    "featured": false,
     "createdAt": "2025-08-20",
+    "category": "Web development"
+  },
+  {
+    "id": 19,
+    "title": "Natural Paving Stores",
+    "description": "Natural Paving Stores is a leading supplier of high-quality paving materials and landscaping products. An e-commerce website was developed to showcase their extensive product range, provide detailed product information, and facilitate online ordering for customers.",
+    "image": "/img/naturalpaving.webp",
+    "technologies": ["WordPress", "PHP", "SCSS", "JavaScript", "E-commerce"],
+    "liveUrl": "https://www.naturalpavingstore.co.uk/",
+    "featured": true,
+    "createdAt": "2026-03-01",
     "category": "Web development"
   }
 ]
