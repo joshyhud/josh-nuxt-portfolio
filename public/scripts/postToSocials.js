@@ -12,7 +12,7 @@ for (const file of files) {
   const title = titleMatch?.[1] || "New post";
   const slug = slugMatch?.[1] || file.split("/").pop().replace(".md", "");
 
-  const url = `https://yourdomain.com/blog/${slug}`;
+  const url = `https://josh-hudson.co.uk/blog/${slug}`;
 
   const text = `🚀 ${title}\n\n${url}`;
 

@@ -24,6 +24,6 @@ jobs:
 
       - name: Run social script
         if: steps.filter.outputs.files != ''
-        run: node public/scripts/postToSocials.js "${{ steps.filter.outputs.files }}"
+        run: node ./public/scripts/postToSocials.js "${{ steps.filter.outputs.files }}"
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
