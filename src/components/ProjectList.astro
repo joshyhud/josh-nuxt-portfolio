@@ -64,12 +64,12 @@ const categories = showAll
             <div class="project-overlay">
               <div class="project-links">
                 {project.liveUrl && (
-                  <a href={project.liveUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                  <a href={project.liveUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-ph-project={project.title} data-ph-category={project.category} data-ph-link-type="live">
                     Live Site
                   </a>
                 )}
                 {project.repoUrl && (
-                  <a href={project.repoUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                  <a href={project.repoUrl} class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-ph-project={project.title} data-ph-category={project.category} data-ph-link-type="source">
                     Source
                   </a>
                 )}
@@ -105,6 +105,29 @@ const categories = showAll
     )}
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Track project link clicks
+    document.querySelectorAll('[data-ph-project]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        window.posthog?.capture('project_link_clicked', {
+          project_title: link.getAttribute('data-ph-project'),
+          category: link.getAttribute('data-ph-category'),
+          link_type: link.getAttribute('data-ph-link-type'),
+        });
+      });
+    });
+
+    // Track "View All Projects" CTA
+    var viewAllBtn = document.querySelector('a[href="/work"].btn.secondary');
+    if (viewAllBtn) {
+      viewAllBtn.addEventListener('click', function () {
+        window.posthog?.capture('view_all_projects_clicked');
+      });
+    }
+  });
+</script>
 
 {showAll && (
   <script>
@@ -158,7 +181,11 @@ const categories = showAll
       }
     }
 
-    filter?.addEventListener("change", () => { currentPage = 1; render(); });
+    filter?.addEventListener("change", () => {
+      currentPage = 1;
+      render();
+      window.posthog?.capture('project_category_filtered', { category: filter?.value ?? 'All' });
+    });
     render();
   </script>
 )}

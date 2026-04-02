@@ -1,0 +1,29 @@
+name: Post to socials on new blog
+
+on:
+  push:
+    paths:
+      - "src/content/blog/**/*.md"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changed
+        uses: tj-actions/changed-files@v44
+
+      - name: Filter new blog posts
+        id: filter
+        run: |
+          echo "files=${{ steps.changed.outputs.added_files }}" >> $GITHUB_OUTPUT
+
+      - name: Run social script
+        if: steps.filter.outputs.files != ''
+        run: node scripts/postToSocials.js "${{ steps.filter.outputs.files }}"
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}

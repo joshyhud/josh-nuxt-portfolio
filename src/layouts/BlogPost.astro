@@ -52,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 			<h2>Related Posts</h2>
 			<div class="posts-grid">
 				{relatedPosts.slice(0, 3).map((post: CollectionEntry<'blog'>) => (
-					<a href={`/blog/${post.slug}`} class="post-card">
+					<a href={`/blog/${post.slug}`} class="post-card" data-ph-related-title={post.data.title}>
 						<h3>{post.data.title}</h3>
 						<p>{post.data.description}</p>
 						<span class="date"><FormattedDate date={post.data.pubDate} /></span>
@@ -62,3 +62,15 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 		</section>
 	)}
 </MainLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-ph-related-title]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        window.posthog?.capture('related_post_clicked', {
+          post_title: link.getAttribute('data-ph-related-title'),
+        });
+      });
+    });
+  });
+</script>

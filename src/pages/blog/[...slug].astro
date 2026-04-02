@@ -18,3 +18,10 @@ const { Content } = await render(post);
 <BlogPost {...post.data}>
 	<Content />
 </BlogPost>
+
+<script is:inline define:vars={{ postTitle: post.data.title, postTags: post.data.tags ?? [] }}>
+  window.posthog?.capture('blog_post_viewed', {
+    post_title: postTitle,
+    tags: postTags,
+  });
+</script>

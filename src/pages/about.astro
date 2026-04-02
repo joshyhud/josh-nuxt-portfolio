@@ -35,7 +35,7 @@ const description = "Get to know Josh Hudson, a UK-based full-stack developer wi
           secure. My journey, deeply supported by the Brighton dev community,
           began in 2017, and I've been building and learning ever since.
         </p>
-        <a class="btn secondary" href="/work">View my work</a>
+        <a class="btn secondary" href="/work" id="view-my-work-btn">View my work</a>
       </div>
       <div class="generative-art">
         <canvas id="generative-canvas" class="generative-canvas"></canvas>
@@ -108,4 +108,10 @@ const description = "Get to know Josh Hudson, a UK-based full-stack developer wi
     animate();
     window.addEventListener("resize", resizeCanvas);
   }
+</script>
+
+<script is:inline>
+  document.getElementById('view-my-work-btn')?.addEventListener('click', function () {
+    window.posthog?.capture('view_my_work_clicked');
+  });
 </script>
