@@ -1,4 +1,4 @@
-name: Post to socials on new blog
+name: Post to Mastodon on new blog
 
 on:
   push:
@@ -13,20 +13,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Get changed files
         id: changed
         uses: tj-actions/changed-files@v44
 
-      - name: Filter new blog posts
-        id: filter
-        run: |
-          echo "files=${{ steps.changed.outputs.added_files }}" >> $GITHUB_OUTPUT
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: Run social script
-        if: steps.filter.outputs.files != ''
-        run: node ./public/scripts/postToSocials.js "${{ steps.filter.outputs.files }}"
+      - name: Run script if new files
+        if: steps.changed.outputs.added_files != ''
+        run: node ./public/scripts/postToMastodon.js "${{ steps.changed.outputs.added_files }}"
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
