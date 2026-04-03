@@ -49,6 +49,13 @@ jobs:
         run: |
           echo "url=https://josh-hudson.co.uk/blog/${{ steps.slug.outputs.slug }}" >> $GITHUB_OUTPUT
 
+      - name: Extract description
+        id: description
+        run: |
+          FILE="${{ steps.file.outputs.file }}"
+          DESCRIPTION=$(sed -n '/^description:[[:space:]]*"/s/^description:[[:space:]]*"\(.*\)"/\1/p' "$FILE")
+          echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+
       - name: Wait for site to be live
         run: sleep 60
 
@@ -58,7 +65,10 @@ jobs:
         with:
           access-token: ${{ secrets.MASTODON_TOKEN }}
           url: "https://mastodon.social"
-          message: ${{ steps.url.outputs.url }}
+          message: |
+            ${{ steps.description.outputs.description }}
+
+            ${{ steps.url.outputs.url }}
 
       - name: Get toot information
         run: |
