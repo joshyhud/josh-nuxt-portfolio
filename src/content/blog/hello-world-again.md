@@ -1,7 +1,7 @@
 ---
 title: "Hello World (Again)"
 description: "Tutorials, posts, and insights from a web developer focused on performance, simplicity, and modern web tools."
-pubDate: 2026-04-03T10:35:00Z
+pubDate: 2026-04-03T10:40:00Z
 tags:
   - Post
 ---
