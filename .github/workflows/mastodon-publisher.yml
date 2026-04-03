@@ -56,6 +56,13 @@ jobs:
           DESCRIPTION=$(sed -n '/^description:[[:space:]]*"/s/^description:[[:space:]]*"\(.*\)"/\1/p' "$FILE")
           echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
 
+      - name: Extract tags
+        id: tags
+        run: |
+          FILE="${{ steps.file.outputs.file }}"
+          TAGS=$(sed -n '/^tags:/,/^[a-z]/p' "$FILE" | grep -oP '(?<= - )[^ ]+' | sed 's/^/#/' | tr '\n' ' ')
+          echo "tags=$TAGS" >> $GITHUB_OUTPUT
+
       - name: Wait for site to be live
         run: sleep 60
 
@@ -66,12 +73,6 @@ jobs:
           access-token: ${{ secrets.MASTODON_TOKEN }}
           url: "https://mastodon.social"
           message: |
-            ${{ steps.description.outputs.description }}
-
-            ${{ steps.url.outputs.url }}
-
-      - name: Get toot information
-        run: |
-          echo "Toot ID: ${{ steps.mastodon_toot.outputs.id }}"
+            ${{ steps.tags.outputs.tags }}
           echo "Toot URL: ${{ steps.mastodon_toot.outputs.url }}"
           echo "Scheduled at: ${{ steps.mastodon_toot.outputs.scheduled_at }}"
