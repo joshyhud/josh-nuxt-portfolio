@@ -31,7 +31,7 @@ jobs:
           echo "url=https://josh-hudson.co.uk/blog/${{ steps.slug.outputs.slug }}" >> $GITHUB_OUTPUT
 
       - name: Wait for site to be live
-        run: sleep 30
+        run: sleep 60
 
       - name: Mastodon Post on GitHub Actions
         id: mastodon_toot
