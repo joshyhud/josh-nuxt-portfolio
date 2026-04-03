@@ -12,17 +12,36 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get blog file
         id: file
         run: |
-          FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^src/content/blog/.*\.md' | head -n 1)
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            FILE=$(git log --name-only --pretty="" -n 1 "$AFTER" | grep '^src/content/blog/.*\.md' | head -n 1)
+          else
+            FILE=$(git diff --name-only "$BEFORE" "$AFTER" | grep '^src/content/blog/.*\.md' | head -n 1)
+          fi
+
+          if [ -z "$FILE" ]; then
+            echo "No changed blog markdown file found in this push."
+            exit 1
+          fi
+
           echo "file=$FILE" >> $GITHUB_OUTPUT
 
       - name: Extract slug
         id: slug
         run: |
-          SLUG=$(basename "${{ steps.file.outputs.file }}" .md)
+          FILE="${{ steps.file.outputs.file }}"
+          REL_PATH="${FILE#src/content/blog/}"
+          SLUG="${REL_PATH%.md}"
+          SLUG="${SLUG%/index}"
+
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
 
       - name: Build URL
