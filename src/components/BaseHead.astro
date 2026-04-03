@@ -48,14 +48,12 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.site).href} />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:url" content={canonicalURL} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={new URL(image.src, Astro.site).href} />
 
 <!-- Umami tracking -->
  <script defer src="https://cloud.umami.is/script.js" data-website-id="006374f6-07c8-4167-a663-bbab79c21c59"></script>
