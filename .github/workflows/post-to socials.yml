@@ -24,6 +24,6 @@ jobs:
 
       - name: Run script if new files
         if: steps.changed.outputs.added_files != ''
-        run: node scripts/postToMastodon.js "${{ steps.changed.outputs.added_files }}"
+        run: node scripts/postToMastodon.js ${{ steps.changed.outputs.all_changed_files }}
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}

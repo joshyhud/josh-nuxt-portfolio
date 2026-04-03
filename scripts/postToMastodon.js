@@ -1,13 +1,13 @@
 import fs from "fs";
 
-const filesArg = process.argv[2];
+const filesArg = process.argv.slice(2);
 
-if (!filesArg) {
-  console.log("No new files to process");
+if (!filesArg.length) {
+  console.log("No files passed");
   process.exit(0);
 }
 
-const files = filesArg.split(" ");
+const files = filesArg;
 
 for (const file of files) {
   try {
