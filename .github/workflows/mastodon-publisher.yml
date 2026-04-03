@@ -1,4 +1,4 @@
-name: Mstodon publisher
+name: Mastodon publisher
 
 on:
   push:
@@ -11,7 +11,27 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@
+
+      - name: Get blog file
+        id: file
+        run: |
+          FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^src/content/blog/.*\.md' | head -n 1)
+          echo "file=$FILE" >> $GITHUB_OUTPUT
+
+      - name: Extract slug
+        id: slug
+        run: |
+          SLUG=$(basename "${{ steps.file.outputs.file }}" .md)
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+
+      - name: Build URL
+        id: url
+        run: |
+          echo "url=https://josh-hudson.co.uk/blog/${{ steps.slug.outputs.slug }}" >> $GITHUB_OUTPUT
+
+      - name: Wait for site to be live
+        run: sleep 30
 
       - name: Mastodon Post on GitHub Actions
         id: mastodon_toot
@@ -19,7 +39,7 @@ jobs:
         with:
           access-token: ${{ secrets.MASTODON_TOKEN }}
           url: "https://mastodon.social"
-          message: "Hello from GitHub Actions!"
+          message: ${{ steps.url.outputs.url }}
 
       - name: Get toot information
         run: |
