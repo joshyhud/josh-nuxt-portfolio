@@ -88,8 +88,6 @@ const allTags = [
 				const show = filter === 'all' || tags.includes(filter);
 				card.toggleAttribute('hidden', !show);
 			});
-
-			window.posthog?.capture('blog_tag_filtered', { tag: filter });
 		});
 	});
 </script>
