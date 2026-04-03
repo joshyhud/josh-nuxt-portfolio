@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Mastodon Post on GitHub Actions
-          id: mastodon_toot
-          uses: cbrgm/mastodon-github-action@v2
-          with:
-            access-token: ${{ secrets.MASTODON_TOKEN }}
-            url: 'https://mastodon.social'
-            message: "Hello from GitHub Actions!"
+        id: mastodon_toot
+        uses: cbrgm/mastodon-github-action@v2
+        with:
+          access-token: ${{ secrets.MASTODON_TOKEN }}
+          url: "https://mastodon.social"
+          message: "Hello from GitHub Actions!"
 
-        - name: Get toot information
-          run: |
-            echo "Toot ID: ${{ steps.mastodon_toot.outputs.id }}"
-            echo "Toot URL: ${{ steps.mastodon_toot.outputs.url }}"
-            echo "Scheduled at: ${{ steps.mastodon_toot.outputs.scheduled_at }}"
+      - name: Get toot information
+        run: |
+          echo "Toot ID: ${{ steps.mastodon_toot.outputs.id }}"
+          echo "Toot URL: ${{ steps.mastodon_toot.outputs.url }}"
+          echo "Scheduled at: ${{ steps.mastodon_toot.outputs.scheduled_at }}"
