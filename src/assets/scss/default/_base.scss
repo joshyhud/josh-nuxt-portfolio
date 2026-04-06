@@ -37,6 +37,10 @@ select {
   border: none;
 }
 
+.astro-code {
+  padding: 1rem;
+}
+
 @media (width <= 980px) {
   .grid {
     grid-template-columns: repeat(6, 1fr);
