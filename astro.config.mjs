@@ -8,4 +8,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://josh-hudson.co.uk",
   integrations: [mdx(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: "dracula", // or 'nord', 'one-dark-pro'
+    },
+  },
 });
