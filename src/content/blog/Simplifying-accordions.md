@@ -1,7 +1,7 @@
 ---
 title: "Simplifying Accordions"
 description: "Learn how to use the HTML `<details>` and `<summary>` elements to create accessible, interactive UI components without JavaScript. This tutorial covers practical examples, styling techniques, and how to build accordions using pure HTML for modern, lightweight web development."
-pubDate: 2026-04-06T09:30:00Z
+pubDate: 2026-04-06T09:29:00Z
 tags:
   - Tutorial
 ---
