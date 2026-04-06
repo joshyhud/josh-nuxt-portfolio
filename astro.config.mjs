@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
-      theme: "dracula", // or 'nord', 'one-dark-pro'
+      theme: "everforest-dark",
     },
   },
 });
