@@ -41,6 +41,10 @@ select {
   padding: 1rem;
 }
 
+// MD line break element
+hr {
+  margin: 2rem 0;
+}
 @media (width <= 980px) {
   .grid {
     grid-template-columns: repeat(6, 1fr);
