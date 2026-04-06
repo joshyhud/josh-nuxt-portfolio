@@ -65,10 +65,14 @@ jobs:
 
       - name: Build Mastodon message
         id: message
+        env:
+          STEP_TAGS: ${{ steps.tags.outputs.tags }}
+          STEP_DESCRIPTION: ${{ steps.description.outputs.description }}
+          STEP_URL: ${{ steps.url.outputs.url }}
         run: |
-          TAGS="${{ steps.tags.outputs.tags }}"
-          DESCRIPTION="${{ steps.description.outputs.description }}"
-          URL="${{ steps.url.outputs.url }}"
+          TAGS="$STEP_TAGS"
+          DESCRIPTION="$STEP_DESCRIPTION"
+          URL="$STEP_URL"
 
           {
             echo "message<<EOF"
