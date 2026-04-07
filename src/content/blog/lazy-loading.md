@@ -8,7 +8,7 @@ tags:
 
 # This is lazy
 
-<img src="/img/lazy-cat.gif" loading="lazy" alt="A lazy cat sitting on the sofa sighing" width="300" height="200">
+<img src="/images/lazy-cat.gif" loading="lazy" alt="A lazy cat sitting on the sofa sighing" width="300" height="200">
 
 The cat above is being very lazy, but also uses the HTML attribute of `loading="lazy"`. This short little snippet added to `<img>` tags will save you having to use a third party library to enusre that images are not loaded until they are required.
 
