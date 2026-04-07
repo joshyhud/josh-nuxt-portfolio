@@ -1,6 +1,6 @@
 ---
 title: "This tutorial is lazy"
-description: "It's Tuesday morning after, lets get lazy! No need for external library lazy loading natively for modern browsers"
+description: "It's Tuesday morning, lets get lazy! No need for external libraries for lazy loading natively for modern browsers"
 pubDate: 2026-04-07T08:00:00Z
 tags:
   - Tutorial
