@@ -6,7 +6,7 @@ tags:
   - Tutorial
 ---
 
-# Creating Interactive Accordions with `<details>` and `<summary>` tags.
+# Creating interactive accordions with `<details>` and `<summary>` tags.
 
 The `<details>` and `<summary>` elements are a powerful, native way to create interactive accordion components on the web and don't need a single line of JavaScript to work.
 
@@ -32,7 +32,7 @@ These elements are perfect for building FAQ sections, accordions for content, an
 - `<details>`: this is a container that can be toggled open or closed.
 - `<summary>`: the visible label or heading users will see and click to expand/collapse the content.
 
-### Basic Example
+### Basic example
 
 ```html
 <details>
@@ -49,7 +49,7 @@ These elements are perfect for building FAQ sections, accordions for content, an
 
 ---
 
-## Open by Default
+## Open by default
 
 You can make a `<details>` element open by default using the `open` attribute:
 
@@ -62,11 +62,11 @@ You can make a `<details>` element open by default using the `open` attribute:
 
 ---
 
-## Styling the Elements
+## Styling the elements
 
 Browsers add a default arrow (marker), but you can customize the appearance.
 
-### Remove Default Marker
+### Remove default marker
 
 ```css
 summary {
@@ -78,7 +78,7 @@ summary::-webkit-details-marker {
 }
 ```
 
-### Add Custom Indicator
+### Add Ccstom indicator
 
 ```css
 summary::after {
@@ -93,7 +93,7 @@ details[open] summary::after {
 
 ---
 
-## Creating an Accordion (No JS)
+## Creating an accordion
 
 By default, multiple `<details>` can be open at once. To create an accordion (only one open), you can use the `name` attribute (supported in modern browsers):
 
@@ -113,7 +113,7 @@ Only one will stay open at a time.
 
 ---
 
-## The Important bit: Accessibility Benefits
+## The important bit: accessibility benefits
 
 One of the biggest advantages of using `<details>` is built-in accessibility:
 
@@ -123,7 +123,7 @@ One of the biggest advantages of using `<details>` is built-in accessibility:
 
 ---
 
-## When Should You Use It?
+## When should you use it?
 
 Great use cases include:
 
@@ -139,7 +139,7 @@ Avoid using it when:
 
 ---
 
-## Progressive Enhancement Tip
+## Progressive enhancement tip
 
 Even if a browser doesn’t support `<details>`, the content is still visible—making it a safe, resilient choice.
 
@@ -147,7 +147,7 @@ Even if a browser doesn’t support `<details>`, the content is still visible—
 
 ---
 
-## Final Thoughts
+## Final thoughts
 
 `<details>` and `<summary>` are a great example of how modern HTML can replace JavaScript for common UI patterns. They’re lightweight, accessible, and easy to implement.
 
