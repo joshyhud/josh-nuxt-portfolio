@@ -11,6 +11,13 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<'blog'>;
 
+const posts = await getCollection('blog');
+
+const recentPosts = posts
+	.filter(post => post.data.tags?.some(tag => ['posts','thoughts', 'tutorials'].includes(tag)))
+	.sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+	.slice(0, 2);
+
 const post = Astro.props;
 const { Content } = await render(post);
 ---

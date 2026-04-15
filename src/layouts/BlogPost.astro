@@ -8,7 +8,8 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	relatedPosts?: CollectionEntry<'blog'>[];
 };
 
-const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, recentPosts } = Astro.props;
+
 ---
 
 <MainLayout title={title} description={description}>
@@ -16,7 +17,8 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 		<div class="prose container">
 			<slot />
 		</div>
-				<div class="post-header">
+
+		<div class="post-header">
 			<div class="container grid">
 				{heroImage && (
 					<div class="blog-header-image">
@@ -46,19 +48,5 @@ const { title, description, pubDate, updatedDate, heroImage, relatedPosts } = As
 				</div>
 			</div>
 		</div>
-	</article>
-	{relatedPosts && relatedPosts.length > 0 && (
-		<section class="related-posts container">
-			<h2>Related Posts</h2>
-			<div class="posts-grid">
-				{relatedPosts.slice(0, 3).map((post: CollectionEntry<'blog'>) => (
-					<a href={`/blog/${post.id}`} class="post-card">
-						<h3>{post.data.title}</h3>
-						<p>{post.data.description}</p>
-						<span class="date"><FormattedDate date={post.data.pubDate} /></span>
-					</a>
-				))}
-			</div>
-		</section>
-	)}
+	</article>	
 </MainLayout>
