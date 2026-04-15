@@ -13,6 +13,7 @@ const { title, description, pubDate, updatedDate, heroImage, recentPosts } = Ast
 ---
 
 <MainLayout title={title} description={description}>
+	<MainLayout title={title} description={description} ogType="article">
 	<article>
 		<div class="prose container">
 			<slot />
