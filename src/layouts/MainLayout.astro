@@ -9,18 +9,15 @@ import '../assets/scss/main.scss';
 interface Props {
 	title?: string;
 	description?: string;
-	ogType?: string;
 }
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, ogType } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-			<BaseHead title={title} description={description} ogType={ogType} />
 	</head>
 	<body>
 		<Header />
