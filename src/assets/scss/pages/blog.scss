@@ -1,6 +1,27 @@
 article {
   display: flex;
   flex-direction: column;
+
+  .related-posts {
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      h2 {
+        margin-bottom: 1rem;
+      }
+      .blog-grid {
+        .blog-cards {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          .blog-card {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+
   .post-header {
     .container {
       max-width: 980px;
