@@ -11,6 +11,30 @@ interface Props {
 	description?: string;
 }
 
+// Check if this is the homepage
+const isHomepage = Astro.url.pathname === '/';
+
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Josh Hudson',
+    url: 'https://josh-hudson.co.uk',
+    jobTitle: 'Web Developer',
+    description: 'Full-Stack Web Developer in Worthing & Brighton',
+    image: 'https://josh-hudson.co.uk/img/profile.webp',
+    sameAs: [
+        'https://twitter.com/yourusername', // add your twitter
+        'https://github.com/yourusername', // add your github
+        'https://linkedin.com/in/yourusername', // add your linkedin
+    ],
+    worksFor: {
+        '@type': 'Organization',
+        name: 'Self-employed',
+    },
+};
+
+const schemaJson = isHomepage ? organizationSchema : null;
+
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
@@ -18,6 +42,9 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		        {schemaJson && (
+            <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+        )}
 	</head>
 	<body>
 		<Header />

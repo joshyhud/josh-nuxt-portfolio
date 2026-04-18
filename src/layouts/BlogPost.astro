@@ -10,9 +10,49 @@ type Props = CollectionEntry<'blog'>['data'] & {
 
 const { title, description, pubDate, updatedDate, heroImage, recentPosts } = Astro.props;
 
+// JSON-LD article schema
+ const articleSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: heroImage ? new URL(heroImage.src, Astro.site).toString() : undefined,
+    datePublished: pubDate.toISOString(),
+    dateModified: updatedDate ? updatedDate.toISOString() : pubDate.toISOString(),
+    author: {
+        '@type': 'Person',
+        name: 'Josh Hudson',
+        url: 'https://josh-hudson.co.uk',
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'Josh Hudson',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://josh-hudson.co.uk/logo.svg',
+        },
+    },
+ }
+
+
 ---
 
 <MainLayout title={title} description={description}>
+	    <!-- Add SEO schema here -->
+    <SEO 
+        type="article"
+        title={title}
+        description={description}
+        image={heroImage ? new URL(heroImage.src, Astro.site).toString() : undefined}
+        datePublished={pubDate}
+        dateModified={updatedDate}
+        author={{ name: 'Josh Hudson', url: 'https://josh-hudson.co.uk' }}
+    />
+
+	    <!-- Add this in the head -->
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    </Fragment>
 	<article>
 		<div class="prose container">
 			<slot />

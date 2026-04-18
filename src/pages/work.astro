@@ -1,11 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ProjectList from "../components/ProjectList.astro";
+import SEO from "../components/SEO.astro";
 
 const title = "Josh Hudson – Web Development Portfolio | WordPress, Shopify & Bespoke Builds";
 const description = "Explore a selection of Josh Hudson's recent web development projects—ranging from custom WordPress themes to dynamic Shopify storefronts and fully bespoke builds. Designed with performance, accessibility, and creativity in mind.";
 ---
 
 <MainLayout title={title} description={description}>
+      <SEO 
+        type="person"
+        title="Josh Hudson – Web Development Portfolio"
+        description="Explore a selection of Josh Hudson's recent web development projects—ranging from custom WordPress themes to dynamic Shopify storefronts and fully bespoke builds. Designed with performance, accessibility, and creativity in mind."
+        image="https://josh-hudson.co.uk/img/profile.webp"
+    />
   <ProjectList showAll />
 </MainLayout>

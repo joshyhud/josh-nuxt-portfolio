@@ -1,0 +1,45 @@
+---
+export interface Props {
+    type: 'article' | 'person' | 'organization';
+    title: string;
+    description: string;
+    image?: string;
+    datePublished?: Date;
+    dateModified?: Date;
+    author?: {
+        name: string;
+        url?: string;
+    };
+}
+
+const { type, title, description, image, datePublished, dateModified, author } = Astro.props;
+
+let schema: any;
+
+if (type === 'article') {
+    schema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: title,
+        description: description,
+        image: image,
+        datePublished: datePublished?.toISOString(),
+        dateModified: dateModified?.toISOString(),
+        author: author || {
+            '@type': 'Person',
+            name: 'Josh Hudson',
+        },
+    };
+} else if (type === 'person') {
+    schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: title,
+        description: description,
+        image: image,
+        url: Astro.site,
+    };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

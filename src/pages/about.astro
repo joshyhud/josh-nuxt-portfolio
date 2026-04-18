@@ -1,11 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import SEO from "../components/SEO.astro";
 
 const title = "About Josh Hudson – Full-Stack Web Developer Based in Brighton & Worthing";
 const description = "Get to know Josh Hudson, a UK-based full-stack developer with a passion for clean code, CSS animations, and creative digital experiences. From freelancing to leading projects, discover his journey, skills, and values.";
 ---
 
 <MainLayout title={title} description={description}>
+      <SEO 
+        type="person"
+        title="About Josh Hudson"
+        description="Web developer focused on performance and user experience"
+        image="https://josh-hudson.co.uk/img/profile.webp"
+    />
   <section class="about-section">
     <div class="container grid">
       <div class="about-content">

@@ -18,7 +18,7 @@ const Tag = link ? "a" : "div";
   <Tag href={link} class={link ? "card-link" : undefined}>
     {image && (
       <div class={imageClasses}>
-        <img loading={fetchpriority === "high" ? "eager" : "lazy"} src={image} alt="Card image" />
+        <img loading={fetchpriority === "high" ? "eager" : "lazy"} src={image} alt={title || "Card image"} />
       </div>
     )}
     <div class="card-content">

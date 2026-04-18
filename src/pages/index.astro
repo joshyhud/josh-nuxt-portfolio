@@ -1,14 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
-import ProjectList from "../components/ProjectList.astro";     
+import ProjectList from "../components/ProjectList.astro";
+import SEO from "../components/SEO.astro";     
 
 ---
 
 <MainLayout>
+    <!-- Add SEO schema for homepage -->
+    <SEO 
+        type="person"
+        title="Josh Hudson"
+        description="Full-Stack Web Developer in Worthing & Brighton | HTML, CSS, JavaScript, PHP, WordPress & Shopify Expert"
+        image="https://josh-hudson.co.uk/img/profile.webp"
+    />
     <section class="hero">
     <div class="container grid">
-      <Card fetchpriority="high" cardClass="sm" image="/img/profile.webp" />
+      <Card fetchpriority="high" cardClass="sm" image="/img/profile.webp" alt="Profile picture of Josh" />
       <div class="statement">
         <p>
           <accent>Hi, I'm Josh.</accent> I focus on impactful digital
